@@ -17,7 +17,6 @@ async function conectar() {
     if (!global.conexion) {
         global.conexion = mysql.createPool({
             connectionLimit: 5,
-            port: global.config.db_port,
             host: global.config.db_host,
             user: global.config.db_user,
             password: global.config.db_password,
@@ -90,7 +89,6 @@ async function borrar(id) {
 
 async function crearEstructuraDatos() {
     const conexion = mysql.createConnection({
-        port: global.config.db_port,
         host: global.config.db_host,
         user: global.config.db_user,
         password: global.config.db_password

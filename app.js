@@ -143,7 +143,19 @@ const config = require("./config.json");
 const environment = process.env.NODE_ENV || "development";
 global.config = config[environment];
 
-app.listen(3000, function () {
-    console.log('La Aplicación está funcionando en el puerto 3000');
+app.use(function (err, req, res, next) {
+    mensajeError = '';
+    console.log(err);
+    if (err.code=='ER_ACCESS_DENIED_ERROR') {
+        mensajeError = 'Los datos de conexión con al base de datos no son correctos';
+    }
+    res.status(500).render('error', { error: mensajeError, layout: false});
 });
+
+/*app.listen(3000, function () {
+    console.log('La Aplicación está funcionando en el puerto 3000');
+});*/
+app.listen(global.config.app_port, () => {
+    console.log(`Escuchando en el puerto ${global.config.app_port}`);
+})
 //module.exports = app;

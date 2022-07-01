@@ -1,10 +1,9 @@
 {
     "development" : {
         "app_port": 3000,
-        "db_port" : 3307,
         "db_host" : "localhost",
-        "db_user": "moviles",
-        "db_password": "app_moviles_2",
+        "db_user": "",
+        "db_password": "",
         "db_database": "practicasoa"
     },
     "production" : {
@@ -12,7 +11,7 @@
         "db_host" : "",
         "db_user": "",
         "db_password": "",
-        "db_database": "app_deploy"
+        "db_database": "practicasoa"
     }
 
 }
