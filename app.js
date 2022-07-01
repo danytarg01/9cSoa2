@@ -143,4 +143,7 @@ const config = require("./config.json");
 const environment = process.env.NODE_ENV || "development";
 global.config = config[environment];
 
-module.exports = app;
+app.listen(3000, function () {
+    console.log('La Aplicación está funcionando en el puerto 3000');
+});
+//module.exports = app;
