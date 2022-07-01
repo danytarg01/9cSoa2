@@ -1,0 +1,64 @@
+<h2>Contactos</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Teléfono</th>
+        <th>E-mail</th>
+        <th></th>
+    </tr>
+    {{#each listado}}
+    <tr>
+        <td>{{idUser}}</td>
+        <td>{{name}}</td>
+        <td>{{email}}</td>
+        <td>{{password}}</td>
+        <td>
+            <a href="/user/editar/{{idUser}}" class="btn btn-primary">Editar</a>
+            <a href="/user/borrar/{{idUser}}" class="btn btn-warning">Borrar</a>
+        </td>
+    </tr>
+    {{/each}}
+</table>
+
+<h2> Editar usuario</h2>
+
+<form  method="post">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name" value="{{objEdidion.name}}" >
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" name="email" value="{{objEdidion.email}}">
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="text" class="form-control" name="password" value="{{objEdidion.password}}">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="/" class="btn btn-light">Cancelar</a>
+    </div>
+</form>
+<h2> Agregar usuario</h2>
+<form action="/user/guardar" method="post">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name">
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" name="email">
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="text" class="form-control" name="password">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="/" class="btn btn-light">Cancelar</a>
+    </div>
+</form>
+<br>
